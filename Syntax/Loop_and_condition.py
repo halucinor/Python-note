@@ -1,10 +1,10 @@
-'''
+'''TOC
 - for-if-else
-- 삼항 연산
-- where
-'''
+- for 반대로 실행
 
+'''
 # for-else 문은 중간에 break 되지 않고 마지막 요소까지 반복했을 때 수행
+
 print('#1. for-else test')
 for i in range(10):
     # print(i)
@@ -27,4 +27,13 @@ else:
 ''' Result
 # for is not breaked
 '''
+
+##############################
+
+# for 문 반대로 실행
+for i in range(10,0,-1): # 10 ~ 1
+    ...
+
+for i in reversed(range(10)): # 9 ~ 0 부터 시작
+    ...
 
