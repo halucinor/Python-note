@@ -9,32 +9,40 @@
 
 - **Python Sort**
   - [다양한 sort 구현](./Syntax/Sorting.py)
-  - [library](./Syntax/[TODO])
-  - [Custom sort](./Syntax/cmp_to_key.py)
+  - [List built in 정렬](./Syntax/sort_built_in.py)
+  - [compare key 정렬](./Syntax/cmp_to_key.py)
     
 - **String Handling**
   - Sliceing and Indexing
   - regex
     
 - **Dict**
-    Initilization
-    Sorting
+  - [dict, defaultdict]
+  - [Sorting, OrderedDict](./Syntax/dict_sorting.py)
+  
+https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%93%88-3%EC%A2%85-%EC%A0%95%EB%A6%AC
 
 - **Data Structure**
-    Collections
+  - [dueue](Library/deque.py)
+  - [Counter](./Library/counter.py)
+  - heapq
+  - Linked_list
+  - [itertools (순열,조합,중복조합,중복순열)](./Library/itertools.py)
 
 - **Matrix handling**
   - [90-degree Matrix rotation](./Library/matrix_rotation.py)
   - [Matrix Rotation](./Library/[TODO])
 
+- **Iterable Type Change**
+  - [List_Set_Tuple_Dict]()
+
 - **Math**  
-Math library
-Permutation, Combination  
-LCM, GCD   
-Check Prime Number  
-Find All Divisors  
-Prime Factorization
-에라토스테네스의 채
+  - Math library
+  - LCM, GCD
+  - Check Prime Number  
+  - Find All Divisors 
+  - Prime Factorization
+  - 에라토스테네스의 채
 
 ## 알고리즘 유형에 따른 Tip 
 
@@ -50,16 +58,16 @@ Prime Factorization
 - 탐색 범위가 1억 ~ 10억 이상이면 이분탐색의 가능성을 의심
 
 ```python
-#이분탐색 template  
+# 이분탐색 template  
 left = 0
-right = 10 ** 10 #some large number
+right = 10 ** 10 # some large number
 result = 0
 while left <= right:
 
     mid = (left + right) // 2
             
     if is_possible(mid): # <- 높은 값 탐색 
-        answer = mid # min(answer, mid)
+        result = mid # min(result, mid)
         left = mid + 1
     else: # <- 낮은 값 탐색
         right = mid - 1
@@ -70,34 +78,42 @@ while left <= right:
 
 ### BFS/DFS
 
-너비우선탐색(Breadth First Search, BFS).  
-그래프문제나 격자판이 주어진 상황에서 경로를 찾는 문제에서 자주 사용되지만, 매 순간에 선택지를 만드는 순간에도 잘 사용!!
-BFS/DFS/Dijkstra 는 코테에서 자주 등장
-큐를 사용하는 BFS나 Dijkstra에서는 큐에 삽입되는 원소가 중요한데, 어느 순간의 상태를 큐에 저장한다고 생각하면 어떻게 튜플을 구성해서 큐에 삽입해야 하는지 쉽게 설정할 수 있다.
-예시: (현재위치, 이동횟수, 이동방향, 남은 스킬 사용횟수, etc..) 들을 묶어서 큐에 삽입 가능
-마찬가지로 방문처리도 거의 설정한 튜플의 크기만큼 지정해서 방문을 확인한다.
+#### BFS
+순간의 상태를 queue 에 저장 -> info  
+**info** : (현재위치, 이동횟수, 이동방향, 남은 스킬 사용횟수, etc..) 들을 묶어서 큐에 append
+**visited** : 튜플의 크기만큼 지정
 
-```
+```python
+
+
 q = [start]
-vis[start] = true
+visited[start] = true
 
 while q:
   here = q.pop(0) #deque 사용시 popleft()
   
   for there in adj[here]:
-    if vis[there]: continue
+    #out of index check
+    #if 
+    if visited[there]: continue
     q.push(there)
+
 ```    
+- 문제
+  - 
 
-깊이우선탐색(Depth First Search, DFS)
+#### DFS
 
-```
+```python
+
 def dfs(here):
-  vis[here] = true
+  visited[here] = true
   for there in adj[here]:
-    if vis[there]: continue
+    if visited[there]: continue
     dfs(there)
+
 ```
+
 ### Dijstra
 ### Floyd–Warshall algorithm
 ### Minimum Spanning Tree (MST)

@@ -1,3 +1,5 @@
+# [sorting Key Functions총 정리] https://security-nanglam.tistory.com/377
+
 '''
 - list.sort()
 - sorted()
