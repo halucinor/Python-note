@@ -84,8 +84,6 @@ while left <= right:
 **visited** : 튜플의 크기만큼 지정
 
 ```python
-
-
 q = [start]
 visited[start] = true
 
@@ -99,8 +97,7 @@ while q:
     q.push(there)
 
 ```    
-- 문제
-  - 
+- 문제 [TODO]
 
 #### DFS
 
@@ -113,8 +110,11 @@ def dfs(here):
     dfs(there)
 
 ```
+- 문제 [TODO]
 
-### Dijstra
+
+### Dijstra [TODO]
+
 ### Floyd–Warshall algorithm
 ### Minimum Spanning Tree (MST)
 ### Topology Sort
@@ -126,15 +126,17 @@ def dfs(here):
 입력으로 주어지는 수나 특정 조건의 범위가 10 이하로 매우 작다면 사용을 의심해볼 수 있다.
 어떤 상태를 저장하기에 매우 용이하고, 응용하여 가능한 모든 조합을 탐색하는 방법에도 사용할 수 있다.
 비트마스킹의 장점은 단 하나의 수만으로 여러 상태를 저장할 수 있는 것!!
-# 예를 들어 8개의 전구가 있고 2번째, 5번째 전구가 켜져있는 상태를 표시하고 싶다면
 
+**예를 들어 8개의 전구가 있고 2번째, 5번째 전구가 켜져있는 상태를 표시하고 싶다면**
+```python
 bulb_status = 0 # 초기상태 (모든 전구가 꺼짐)     0000 0000
 bulb_status |= (1 << 2) # 2 번째 전구 ON         0000 0100
 bulb_status |= (1 << 5) # 5 번째 전구 ON         0010 0100
-
+```
 ### Divid and Cunquer 
 ### Disjoint-Set (Union-Find)
 ### Two Pointer
+
 ### Dynamic Programming
 문제를 풀고 해결방법을 구상하다가 중복되는 연산이 자주 등장하거나, 어떤 상태를 만족하기 이전 상태에서도 최적의 상태를 만족해야할 때 사용
 
@@ -150,14 +152,14 @@ LIS 알고리즘의 경우, 동적계획법을 이용한 풀이와, 이분탐색
 
 아직 많은 코딩테스트를 참여하지는 않았지만, 개인적으로 문제를 풀면서 유명한 DP알고리즘을 적용한 문제보다는 직접 점화식을 생성하는 문제가 더 자주 등장하는 것 같음!
 
-# 1. 재귀를 사용한 Top Down 방법
-
+- 1. 재귀를 사용한 Top Down 방법
+```python
 memo = [[-1] * N for _ in range(N)]
-
-# 완전탐색을 하되, 이미 연산한 부분에 대해서는 가지치기를 진행하는 방법
-# N의 크기가 너무 커지면 python에서는 재귀호출 횟수제한에 걸려서 오류가 발생할 수 있음!
-# 처음에 완전탐색으로 생각을 시작해서 최적화하기에 좋은 코드!
-
+```
+완전탐색을 하되, 이미 연산한 부분에 대해서는 가지치기를 진행하는 방법
+N의 크기가 너무 커지면 python에서는 재귀호출 횟수제한에 걸려서 오류가 발생할 수 있음!
+처음에 완전탐색으로 생각을 시작해서 최적화하기에 좋은 코드!
+```python
 def dp(n):
 # 기저사례 (base condition)
 if n <= 1: return n
@@ -168,38 +170,40 @@ if memo[n] != -1: return ret
 # 재귀연산
 memo[n] = dp(n - 1) + dp(n - 2)
 return memo[n]
-
-# 2. Bottom Up 방법
-# 단순 반복문을 사용하는 방법이지만, 점화식을 세워 그대로 적용시켜야한다.
+```
+- 2. Bottom Up 방법
+단순 반복문을 사용하는 방법이지만, 점화식을 세워 그대로 적용시켜야한다.
+```python
 memo = [0] * N
 memo[1] = 1
 for i in range(2, N):
   memo[i] = memo[i - 2] + memo[i - 1] 
 # 이런 상태들을 저장하는데 단 하나의 숫자형 변수를 사용!
+```
 
 ## TBD
-Bipartite Matching
-Tree
-Line
-Plane
-KMP
-Trie
-Tiling Problem
-0-1 Knapsack Problem
-LIS (Longest Increasing Subsequence)
-LCS (Longest Common Subsequence)
-Matrix Chain Multiplication
-Geometry
-Number of intersection points of two lines in 1 dimension
-CCW
-Convex Hull
-Polygon
-Probability Theory
-Signal Processing
-FFT
-Miscellaneous
-Number of intervals whose sum is M
-Interval Sum
-Prefix Sum
-Fenwick Tree (Binary Indexed Tree)
-Handling Recursion Limit
+- Bipartite Matching
+- Tree
+- Line
+- Plane
+- KMP
+- Trie
+- Tiling Problem
+- 0-1 Knapsack Problem
+- LIS (Longest Increasing Subsequence)
+- LCS (Longest Common Subsequence)
+- Matrix Chain Multiplication
+- Geometry
+- Number of intersection points of two lines in 1 dimension
+- CCW
+- Convex Hull
+- Polygon
+- Probability Theory
+- Signal Processing
+- FFT
+- Miscellaneous
+- Number of intervals whose sum is M
+- Interval Sum
+- Prefix Sum
+- Fenwick Tree (Binary Indexed Tree)
+- Handling Recursion Limit
