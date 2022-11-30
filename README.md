@@ -20,8 +20,8 @@
 - **Dict**
   - [dict, defaultdict]
   - [Sorting, OrderedDict](./Syntax/dict_sorting.py)
-  
-https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%93%88-3%EC%A2%85-%EC%A0%95%EB%A6%AC
+    
+    https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%93%88-3%EC%A2%85-%EC%A0%95%EB%A6%AC
 
 - **Data Structure**
   - [queue, dueue](Library/queue_deque.py)
@@ -39,7 +39,6 @@ https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%
 
 - **Math**  
   - Math library
-  - LCM, GCD
   - [Check Prime Number](./Math/prime.py)
   - [에라토스테네스의 채](./Math/prime.py)
   - Find All Divisors 
@@ -306,14 +305,11 @@ for i in range(2, N):
 - LCS (Longest Common Subsequence)
 - Matrix Chain Multiplication
 - Geometry
-- Number of intersection points of two lines in 1 dimension
 - CCW
 - Convex Hull
-- Polygon
-- Probability Theory
-- Signal Processing
 - FFT
-- Miscellaneous
+
+### Miscellaneous
 - Number of intervals whose sum is M
 - Interval Sum
 - Prefix Sum
