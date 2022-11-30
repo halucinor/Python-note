@@ -26,7 +26,7 @@ https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%
 - **Data Structure**
   - [queue, dueue](Library/queue_deque.py)
   - [Counter](./Library/counter.py)
-  - [heapq](./Library/heapq.py)
+  - [heapq](./Library/heap.py)
   - Linked_list
   - [itertools (순열,조합,중복조합,중복순열)](./Library/itertools.py)
 
@@ -40,11 +40,10 @@ https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%
 - **Math**  
   - Math library
   - LCM, GCD
-  - Check Prime Number  
+  - [Check Prime Number](./Math/prime.py)
+  - [에라토스테네스의 채](./Math/prime.py)
   - Find All Divisors 
   - Prime Factorization
-  - 에라토스테네스의 채
-
 ## 알고리즘 유형에 따른 Tip 
 
 ### 그리디
