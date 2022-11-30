@@ -23,7 +23,7 @@
 https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%93%88-3%EC%A2%85-%EC%A0%95%EB%A6%AC
 
 - **Data Structure**
-  - [dueue](Library/deque.py)
+  - [queue, dueue](Library/queue_deque.py)
   - [Counter](./Library/counter.py)
   - heapq
   - Linked_list
