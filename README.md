@@ -13,7 +13,8 @@
   - [compare key 정렬](./Syntax/cmp_to_key.py)
     
 - **String Handling**
-  - Sliceing and Indexing
+  - [List Sliceing and Indexing](./Syntax/sliceing_indexing.py)
+  - [String Sliceing and Indexing](./Syntax/string.py)
   - regex
     
 - **Dict**
@@ -25,7 +26,7 @@ https://velog.io/@matt2550/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Collections-%EB%AA%A8%EB%
 - **Data Structure**
   - [queue, dueue](Library/queue_deque.py)
   - [Counter](./Library/counter.py)
-  - heapq
+  - [heapq](./Library/heapq.py)
   - Linked_list
   - [itertools (순열,조합,중복조합,중복순열)](./Library/itertools.py)
 
@@ -113,9 +114,84 @@ def dfs(here):
 - 문제 [TODO]
 
 
-### Dijstra [TODO]
+### Dijkstra [TODO]
+
+- 출발지에서 모든 노드에 대한 최단 경로를 구하는 알고리즘
+
+
+**간단한 Dijkstra**
+- get_smallest_node() -> 방문하지 않은 노드에서 최소 간선을 가지는 노드를 찾음
+- O(V^2)
+
+- visited 에 들어있는 노드가 새로운 최소 경로를 갖는 노드가 들어왔을 때 값이 변화가 없을까?
+![dijkstra](./image/dijkstra.png)
+
+
+- [간단한 다익스트라](./Problem_category/Dijstra_simple.py)
+```python
+def get_smallest_node():
+    #방문하지 않은 노드 중 최소 노드를 찾음
+    min_value = INF
+    index = 0
+    for i in range(1, n + 1):
+        if dist[i] < min_value and not visited[i]:
+            min_value = dist[i]
+            index = i
+    return index
+
+def dijkstra_1(start):
+    dist[start] = 0 # 첫번째 값 초기화
+    
+    visited[start] = True
+
+    #첫번째 방문 초기화
+    for j in graph[start]:
+        dist[j[0]] = j[1]
+
+    for i in range(n - 1):
+        # 최단 경로의 노드를 꺼내 방문 처리 -> visited set 등록
+        now = get_smallest_node()
+        visited[now] = True
+
+        for j in graph[now]:
+            cost = dist[now] + j[1]
+
+            # 다를 노드를 거쳐 이동하는게 짧을 경우 dist 업데이트
+            if cost < dist[0]:
+                dist[j[0]] = cost
+```
+
+**힙을 사용하는 다익스트라**
+- O(ElogV) 
+- **heapq** 를 사용
+
+- [heap 다익스트라](Problem_category/Dijstra_heap.py)
+```python
+def dijkstra(start):
+    q = []
+
+    heappush(q,(0, start)) # distance, node
+    distance[start] = 0
+
+    while q:
+        dist, now = heappop(q)
+
+        # 이미 업데이트 된 경로인지 확인
+        if distance[now] < dist:
+            continue
+
+        for i in graph[now]:
+            cost = dist + i[1] # i : (node, cost)
+
+            # 현재 노드를 거쳐 다른 노드로 이동 하는 경우가 더 짧다면 distance table 업데이트
+            if cost < distance[i[0]]:
+                distance[i[0]] = cost
+                heappush(q, (cost, i[0]))
+```
 
 ### Floyd–Warshall algorithm
+- 모든 지점에서 모든 지점까지의 최단경로
+- 
 ### Minimum Spanning Tree (MST)
 ### Topology Sort
 ### BackTracking
