@@ -208,8 +208,45 @@ bulb_status = 0 # 초기상태 (모든 전구가 꺼짐)     0000 0000
 bulb_status |= (1 << 2) # 2 번째 전구 ON         0000 0100
 bulb_status |= (1 << 5) # 5 번째 전구 ON         0010 0100
 ```
-### Divid and Cunquer 
+
+- Bitmasking
+
+
+### Divid and Cunquer
+
+**TBD**
+
 ### Disjoint-Set (Union-Find)
+
+```python
+#노드 부모 세팅
+parent = [i for i in range(0, n+1)]
+
+#특정 노드의 루트 찾기
+def find(x):
+    if parent[x] != x:
+        return find(parent[x])
+    else:
+        return parent[x]
+
+#두 노드 합치기
+def union(a , b):
+    p_a = find(a)
+    p_b = find(b)
+
+    if p_a < p_b:
+        parent[a] = p_b
+    else:
+        parent[b] = p_a
+    
+#경로 압축
+def find_parent():
+    if parent[x] != x:
+        parent[x] = find_parent(parent[x])
+    else
+        parent[x]
+```
+
 ### Two Pointer
 
 ### Dynamic Programming
