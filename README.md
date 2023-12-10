@@ -3,12 +3,13 @@
 - 문제 풀이에 관한 Template 및 접근 방법에 대한 정리
 
 ## Syntax
+- **Input 처리**
+  - [입력 처리](./Syntax/input.py)
 - **Loop and Condition**
   - [for-if](./Syntax/Loop_and_condition.py)
   - [Pythonic Code](./Syntax/Pytonic_code.py)
 
 - **Python Sort**
-  - [다양한 sort 구현](./Syntax/Sorting.py)
   - [List built in 정렬](./Syntax/sort_built_in.py)
   - [compare key 정렬](./Syntax/cmp_to_key.py)
     
